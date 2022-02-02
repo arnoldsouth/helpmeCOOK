@@ -13,7 +13,7 @@ class previewView extends View {
         this._data.id === id ? 'preview__link--active' : ''
       }" href="#${this._data.id}">
         <figure class="preview__fig">
-          <img src="${this._data.image}" alt="${this._data.title}" crossorigin/>
+          <img src="${this._data.image}" alt="${this._data.title}" />
         </figure>
         <div class="preview__data">
           <h4 class="preview__title">${this._data.title}</h4>
