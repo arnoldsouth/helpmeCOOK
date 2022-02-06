@@ -4,53 +4,6 @@ import fracty from 'fracty';
 import View from './View';
 import icons from 'url:../../img/icons.svg';
 
-// var fracty = require('fracty');
-
-// const evaluateFraction = (fraction, int, retStr) => {
-//   // Is the fraction a whole integer? e.g. 1/1 = 1
-//   if (fraction.n === fraction.d) {
-//     return int + 1;
-//   }
-//   // Is the fraction just the numerator? e.g. 5/1 = 5
-//   else if (fraction.d === 1) {
-//     return int;
-//   }
-//   // If none of these apply, just return the formatted string.
-//   else {
-//     return retStr;
-//   }
-// };
-
-// const formatCount = (count) => {
-//   if (count) {
-//     const [int, dec] = count
-//       .toString()
-//       .split('.')
-//       .map((el) => parseInt(el, 10));
-
-//     if (!dec) return count;
-
-//     if (int === 0) {
-//       const fr = fraction(count);
-
-//       return evaluateFraction(fr, int, `${fr.n}/${fr.d}`);
-//     } else {
-//       const fr = fraction(count - int);
-
-//       return evaluateFraction(fr, int, `${int} ${fr.n}/${fr.d}`);
-//     }
-//   }
-
-//   return '?';
-// };
-
-// const formatCount = (count) => {
-//   if (count) {
-//     return `${fracty(count)}`;
-//   }
-//   return '?';
-// };
-
 class recipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'We could not find that recipe. Please try another again!';
