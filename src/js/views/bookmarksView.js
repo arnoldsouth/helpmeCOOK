@@ -1,8 +1,8 @@
 import View from './View';
-import previewView from './previewView';
+import PreviewView from './PreviewView';
 import icons from 'url:../../img/icons.svg';
 
-class bookmarksView extends View {
+class BookmarksView extends View {
   _parentElement = document.querySelector('.bookmarks__list');
   _errorMessage = 'No recipes bookmarked';
   _message = '';
@@ -13,9 +13,9 @@ class bookmarksView extends View {
 
   _generateMarkup() {
     return this._data
-      .map((bookmark) => previewView.render(bookmark, false))
+      .map((bookmark) => PreviewView.render(bookmark, false))
       .join('');
   }
 }
 
-export default new bookmarksView();
+export default new BookmarksView();

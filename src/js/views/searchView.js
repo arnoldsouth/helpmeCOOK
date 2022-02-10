@@ -1,4 +1,4 @@
-class searchView {
+class SearchView {
   _parentElement = document.querySelector('.search');
 
   getQuery() {
@@ -19,4 +19,4 @@ class searchView {
   }
 }
 
-export default new searchView();
+export default new SearchView();
