@@ -1,7 +1,7 @@
 {
-  "name": "recipe-search",
+  "name": "helpmeCOOK",
   "version": "1.0.0",
-  "description": "Recipe Book",
+  "description": "a recipe finder for cookers, bakers, and eaters",
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
