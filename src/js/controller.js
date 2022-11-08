@@ -2,12 +2,12 @@ import * as model from './model.js';
 
 import { MODAL_CLOSE_SEC } from './config.js';
 
-import RecipeView from './views/recipeView.js';
-import SearchView from './views/searchView.js';
-import ResultsView from './views/resultsView.js';
-import PaginationView from './views/paginationView.js';
-import BookmarksView from './views/bookmarksView.js';
-import AddRecipeView from './views/addRecipeView.js';
+import RecipeView from './views/RecipeView.js';
+import SearchView from './views/SearchView.js';
+import ResultsView from './views/ResultsView.js';
+import PaginationView from './views/PaginationView.js';
+import BookmarksView from './views/BookmarksView.js';
+import AddRecipeView from './views/AddRecipeView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -27,7 +27,7 @@ const controlRecipes = async function () {
     // 0) UPDATE RESULTS VIEW TO HIGHLIGHT SELECTED SEARCH RESULT
     ResultsView.update(model.getSearchResultsPage());
 
-    // 1) Updating bookmarksView
+    // 1) Updating BookmarksView
     BookmarksView.update(model.state.bookmarks);
 
     // 2) Loading the recipe
@@ -52,7 +52,7 @@ const controlSearchResults = async function () {
     // 2) Load search results
     await model.loadSearchResults(query);
 
-    // 3) Render resultsView
+    // 3) Render ResultsView
     ResultsView.render(model.getSearchResultsPage());
 
     // 4) Render initial pagination buttons
@@ -74,8 +74,8 @@ const controlServings = function (newServings) {
   // Updates the recipe servings (in state)
   model.updateServings(newServings);
 
-  // Updates the recipeView
-  // recipeView.render(model.state.recipe);
+  // Updates the RecipeView
+  // RecipeView.render(model.state.recipe);
   RecipeView.update(model.state.recipe);
 };
 
@@ -84,10 +84,10 @@ const controlAddBookmark = function () {
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
 
-  // 2) Update recipeView
+  // 2) Update RecipeView
   RecipeView.update(model.state.recipe);
 
-  // 3) Render bookmarksView
+  // 3) Render BookmarksView
   BookmarksView.render(model.state.bookmarks);
 };
 
@@ -110,7 +110,7 @@ const controlAddRecipe = async function (newRecipe) {
     // Render upload recipe success message
     AddRecipeView.renderMessage();
 
-    // Render bookmarksView
+    // Render BookmarksView
     BookmarksView.render(model.state.bookmarks);
 
     // Change ID in URL
